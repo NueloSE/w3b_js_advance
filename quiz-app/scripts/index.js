@@ -13,6 +13,8 @@ const quizOptionsEl = document.querySelector(".quiz-options")
 let tickEl = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossEl = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 
+const quizTimer = document.querySelector(".quiz-secs")
+
 
 
 startBtnEl.onclick = ()=>{
@@ -28,17 +30,40 @@ continueBtnEl.onclick = ()=>{
 	quizCardEl.classList.add("active-page")
 	showQuestion(0)
 	quizCounting(1)
+	startTimeCount(15)
 }
 
 let quizCount = 0
 let footQuizCount = 1
+let timeCounter;
 
+//timer
+function startTimeCount(timeLeft){
+	timeCounter = setInterval(performCount, 1000)
+
+	function performCount() {
+		quizTimer.textContent = timeLeft
+		timeLeft--
+
+		if (timeLeft < 9){
+			quizTimer.textContent = "0" + quizTimer.textContent
+		}
+
+		if (timeLeft < 0){
+			quizTimer.textContent = "Time out"
+		}
+	}
+}
+
+//when you click next buttion functionality
 nextBtn.onclick = ()=>{
 	if (quizCount < questions.length - 1) {
 		quizCount += 1
 		footQuizCount += 1
 		showQuestion(quizCount)
 		quizCounting(footQuizCount)
+		clearInterval(timeCounter)
+		startTimeCount(15)
 	} else {
 		console.log('completed quiz')
 	}
@@ -48,7 +73,9 @@ function quizCounting(num){
 	quizCounter.innerHTML = '<span><p>'+ num +'</p>of<p>'+ questions.length +'</p>Questions</span>'
 }
 
+// select option
 function optionSelected(anwser) {
+	clearInterval(timeCounter)
 	let userAns = anwser.textContent;
 	let correctAns = questions[quizCount].answer
 	let allOptions = quizOptionsEl.children.length;
@@ -76,6 +103,7 @@ function optionSelected(anwser) {
 	}
 }
 
+//display questions
 function showQuestion(index) {
 	let qustn = "<span>"+ questions[index].number+'.'+ questions[index].question +"</span>"
 	let optionVal = '<div class="option">'+ questions[index].options[0] +'</div>'
