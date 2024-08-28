@@ -158,30 +158,43 @@ body {
 
 }
 
+.option.correct {
+	background-color: lightgreen;
+}
+
+.option.incorrect {
+	background-color: lightpink;
+}
+
+.option.disabled {
+	pointer-events: none;
+}
+
 .option:hover{
 	cursor: pointer;
 	background-color: aqua;
 }
 
-.option .icon {
+.icon {
 	padding: 3px;
 	text-align: center;
 	height: 26px;
 	width: 26px;
 }
 
-.option .tick {
+.icon.cross {
 	border: 2px solid lightcoral;
 	background-color: lightpink;
 	color: lightcoral;
 	border-radius: 100%;
 }
 
-.option .cross {
+.icon.tick {
 	border: 2px solid rgb(39, 187, 39);
 	border-radius: 100%;
 	background-color: lightgreen;
 	color: rgb(39, 187, 39);
+	
 }
 
 .quiz-footer {
