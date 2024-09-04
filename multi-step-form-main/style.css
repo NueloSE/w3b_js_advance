@@ -1,0 +1,229 @@
+@font-face {
+	font-family: 'Ubuntu';
+	src: url('./assets/fonts/Ubuntu-Bold.ttf') format('truetype'),
+		 url('./assets/fonts/Ubuntu-Medium.ttf') format('truetype'),
+		 url('./assets/fonts/Ubuntu-Regular.ttf') format('truetype');
+		 font-weight: 800;
+		 font-style: normal;
+}
+
+:root {
+--MarineBlue: hsl(213, 96%, 18%);
+--PurplishBlue: hsl(243, 100%, 62%);
+--PastelBlue: hsl(228, 100%, 84%);
+--LightBlue: hsl(206, 94%, 87%);
+--StrawberryRed: hsl(354, 84%, 57%);
+
+/* natural color */
+--CoolGray: hsl(231, 11%, 63%);
+--LighGray: hsl(229, 24%, 87%);
+--Magnolia: hsl(217, 100%, 97%);
+--Alabaster: hsl(231, 100%, 99%);
+--White: hsl(0, 0%, 100%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: 0;
+}
+
+body {
+	background-color: var(--LighGray);
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.main {
+	display: flex;
+	position: relative;
+	margin: 30px auto;
+	left: 0%;
+	width: 800px;
+	background-color: white;
+	padding: 8px 10px 8px 8px;
+	border-radius: 10px;
+	flex-wrap: wrap;	
+}
+
+.step {
+	display: flex;
+	flex-direction: column;
+	width: 350px;
+	visibility: hidden;
+	position: absolute;
+	padding: 50px 30px 30px 80px;
+}
+
+.step-2	{
+	/* z-index: 1; */
+	/* opacity: 1; */
+	visibility: visible;
+	
+	
+}
+
+.steps {
+	background-image: url("./assets/images/bg-sidebar-desktop.svg");
+	background-size: cover;
+	border-radius: 10px;
+	background-repeat: no-repeat;
+	padding: 50px 100px 300px 20px;
+}
+
+
+.step-list {
+	display: flex;
+	gap: 10px;
+	padding: 10px;
+	color: hsl(217, 100%, 97%);
+	align-items: center;
+	/* justify-content: space-between; */
+}
+
+.nav-btn {
+	border: 2px solid hsl(217, 100%, 97%);
+	color: hsl(217, 100%, 97%);
+	background-color: transparent;
+	border-radius: 50%;
+	padding: 5px 10px;
+	margin: 5px 10px;
+	font-weight: bold;
+}
+
+.active-nav-btn {
+	background-color: hsl(206, 94%, 87%);
+	color: hsl(213, 96%, 18%);
+	border: none;
+}
+
+.step-list p {
+	font-size: .7rem;
+	font-weight: 300;
+}
+
+.step-list p span {
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+.form-title h2{
+	color: var(--MarineBlue);
+	
+}
+
+.form-title p {
+	font-size: .9rem;
+	padding: 8px 0;
+	color: hsl(231, 11%, 63%);
+}
+
+.form-detail {
+	padding-top: 40px;
+}
+
+.form-detail label {
+	font-size: .8rem;
+	font-weight: bold;
+	color: var(--MarineBlue);
+}
+
+.form-detail input {
+	margin-top: 5px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.form-detail input {
+	width: 100%;
+}
+
+.form-detail input::placeholder{
+	letter-spacing: 3px;
+	font-weight: bold;
+}
+
+.next-btn {
+	position: absolute;
+	bottom: -130px;
+	right: 0;
+	padding: 10px 15px;
+	border-radius: 5px;
+	border: none;
+	color: var(--Magnolia);
+	font-size: bold;
+	background-color: var(--MarineBlue);
+}
+
+.step-2 .plan-list{
+	display: flex;
+	justify-content: space-between;
+	padding: 30px 0;
+	gap: 10px;
+	
+}
+
+.step-2 .plan-option {
+	border: 1px solid var(--CoolGray);
+	width: 100px;
+	padding: 10px 20px 10px 10px;
+	border-radius: 10px;
+}
+
+.plan-option img {
+	width: 40%;
+	margin-bottom: 40px;
+}
+
+.plan {
+	color: var(--MarineBlue);
+	font-weight: bold;
+
+}
+
+.plan-price {
+	font-weight: 100;
+	color: var(--CoolGray);
+	font-size: .7rem;
+	padding-top: 4px;
+}
+
+.month-year {
+	background-color: hsl(227, 100%, 96%);
+	padding: 20px;
+	border-radius: 5px;	
+	display: flex;
+	justify-content: center;
+	font-weight: bold;
+	color: var(--CoolGray);
+}
+
+.slider-box {
+	position: relative;
+	background-color: var(--MarineBlue);
+	width: 35px;
+	height: 20px;
+	border-radius: 10px;
+}
+
+.slider {
+	position: absolute;
+	left: 2px;
+	top: 2.5px;
+	width: 15px;
+	height: 14px;
+	background-color: white;
+	border-radius: 100%;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.slider-box .slider.active {
+	position: absolute;
+	left: 18px;
+	transition: .3s;
+}
+
+.time-plan {
+	color: var(--MarineBlue);
+	transition: .3s;
+}
