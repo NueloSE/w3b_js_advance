@@ -60,7 +60,7 @@ Looking forward to implementing this whole application when i start learning fra
 
 ## Author
 
-- Website - coming soon
+- Website - [quiz app by nuelo](https://quizapp-two-xi.vercel.app/)
 - Frontend Mentor - [@Nuelose](https://www.frontendmentor.io/profile/nuelose)
 - Twitter - [@Nuelose](https://www.twitter.com/nuelose)
 
